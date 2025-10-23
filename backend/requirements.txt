@@ -1,0 +1,6 @@
+fastapi==0.95.2
+uvicorn==0.22.0
+pandas>=1.5
+python-multipart
+tqdm
+pydantic

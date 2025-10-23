@@ -9,3 +9,7 @@ This repo ships a full starter app — frontend + backend plus example data and 
 See the "QUICKSTART" section below to run the app locally.
 
 LEGAL: For research/educational use only. Do not use to cheat in multiplayer or violate game terms.
+
+## License
+This project is licensed under the [Prosperity Public License 3.0.0](https://prosperitylicense.com/versions/3.0.0) — 
+you may use, copy, and modify it for noncommercial purposes only.

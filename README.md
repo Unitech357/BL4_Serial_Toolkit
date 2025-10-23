@@ -1,4 +1,3 @@
-md = r"""
 # BL4 Serial Toolkit (React + Element UI + FastAPI)
 
 A toolkit for decoding, analyzing, and generating Borderlands 4 item serials.  

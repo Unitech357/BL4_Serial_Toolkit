@@ -1,44 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import ImportTab from './components/ImportTab';
-import ViewerTab from './components/ViewerTab';
-import GeneratorTab from './components/GeneratorTab';
-import SettingsTab from './components/SettingsTab';
-import { getMaps } from './api';
+import React from 'react'
+import { Button, Tabs, Input } from 'antd'
 
 export default function App() {
-  const [tab, setTab] = useState('import');
-  const [maps, setMaps] = useState(null);
-
-  useEffect(() => {
-    async function load() {
-      try {
-        const m = await getMaps();
-        setMaps(m);
-      } catch (e) {
-        // backend may not be running yet
-      }
-    }
-    load();
-  }, []);
-
   return (
-    <div className="app-shell">
-      <div className="header">
-        <h2>BL4 Serial Toolkit</h2>
-        <div style={{marginLeft:'auto'}}>
-          <button onClick={() => setTab('import')}>Import</button>
-          <button onClick={() => setTab('viewer')}>Viewer</button>
-          <button onClick={() => setTab('generator')}>Generator</button>
-          <button onClick={() => setTab('settings')}>Settings</button>
-        </div>
-      </div>
-
-      <div className="card">
-        {tab === 'import' && <ImportTab onImported={() => getMaps().then(setMaps)} />}
-        {tab === 'viewer' && <ViewerTab maps={maps} />}
-        {tab === 'generator' && <GeneratorTab maps={maps} />}
-        {tab === 'settings' && <SettingsTab maps={maps} />}
+    <div style={{ padding: 24 }}>
+      <h1>BL4 Serial Toolkit</h1>
+      <Tabs
+        defaultActiveKey="1"
+        items={[
+          { key: '1', label: 'Decoder', children: <Input.TextArea placeholder="Paste serial here" rows={6} /> },
+          { key: '2', label: 'Viewer',  children: <div>Viewer table goes here</div> },
+          { key: '3', label: 'Editor',  children: <div>Editor form goes here</div> },
+          { key: '4', label: 'Settings',children: <div>Settings go here</div> },
+        ]}
+      />
+      <div style={{ marginTop: 16 }}>
+        <Button type="primary">Run</Button>
       </div>
     </div>
-  );
+  )
 }

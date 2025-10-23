@@ -1,17 +1,17 @@
 {
-  "name": "bl4-serial-frontend",
-  "version": "0.1.0",
+  "name": "bl4-serial-toolkit-frontend",
   "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --host 0.0.0.0 --port 4173"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "element-react": "^0.4.11",
-    "element-theme-default": "^2.2.1"
+    "antd": "^5.21.4"
   },
   "devDependencies": {
     "vite": "^5.0.0",

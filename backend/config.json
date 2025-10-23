@@ -1,0 +1,9 @@
+{
+  "cache_dir": "cache",
+  "rows_jsonl": "cache/rows.jsonl",
+  "maps_json": "cache/maps.json",
+  "chunksize": 5000,
+  "encoding": "utf-8",
+  "csv_encoding_fallbacks": ["utf-8", "utf-8-sig", "latin1", "cp1252"],
+  "max_generate": 50
+}
